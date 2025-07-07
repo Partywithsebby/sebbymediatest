@@ -1,22 +1,42 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function LandingPage() {
+  useEffect(() => {
+    document.body.style.background = "#000";
+    document.body.style.overflowX = "hidden";
+  }, []);
+
   return (
-    <div className="font-sans leading-relaxed text-gray-900 scroll-smooth">
+    <div className="font-sans leading-relaxed text-white relative overflow-hidden">
+      {/* Moving abstract space background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160721_A_07_SpaceNebula_1080p.mp447801.webm" type="video/webm" />
+          <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160721_A_07_SpaceNebula_1080p.mp447801.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
+      </div>
+
       {/* Hero */}
-      <header className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black to-teal-700 text-white px-4">
+      <header className="relative z-10 min-h-screen flex flex-col justify-center items-center px-4 text-center">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl font-extrabold mb-4 text-center"
+          className="text-5xl md:text-6xl font-extrabold mb-4"
         >
           Want a site like this? 🚀
         </motion.h1>
         <motion.a
           href="#contact"
           whileHover={{ scale: 1.05 }}
-          transition={{ delay: 0.2 }}
           className="px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg hover:shadow-xl transition"
         >
           Contact Us
@@ -24,18 +44,18 @@ export default function LandingPage() {
       </header>
 
       {/* Services */}
-      <section id="services" className="py-20 px-4 md:px-12 bg-gray-50">
+      <section id="services" className="relative z-10 py-20 px-4 md:px-12 bg-black bg-opacity-80">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What We Do</h2>
         <div className="grid gap-8 md:grid-cols-3">
-          <div className="p-8 bg-white rounded-2xl shadow-md">
+          <div className="p-8 bg-white bg-opacity-10 rounded-2xl shadow-md backdrop-blur-sm">
             <h3 className="text-xl font-semibold mb-2">Brand Strategy</h3>
             <p className="text-sm">Crafting distinct positioning and messaging that resonates.</p>
           </div>
-          <div className="p-8 bg-white rounded-2xl shadow-md">
+          <div className="p-8 bg-white bg-opacity-10 rounded-2xl shadow-md backdrop-blur-sm">
             <h3 className="text-xl font-semibold mb-2">Content &amp; Social</h3>
             <p className="text-sm">Scroll-stopping creative calibrated for every platform.</p>
           </div>
-          <div className="p-8 bg-white rounded-2xl shadow-md">
+          <div className="p-8 bg-white bg-opacity-10 rounded-2xl shadow-md backdrop-blur-sm">
             <h3 className="text-xl font-semibold mb-2">Performance Media</h3>
             <p className="text-sm">ROI-driven paid campaigns powered by real-time analytics.</p>
           </div>
@@ -43,7 +63,7 @@ export default function LandingPage() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-20 px-4 md:px-12">
+      <section id="about" className="relative z-10 py-20 px-4 md:px-12 bg-black bg-opacity-80">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Who We Are</h2>
           <p className="text-lg">
@@ -54,7 +74,7 @@ export default function LandingPage() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20 px-4 md:px-12 bg-gray-50">
+      <section id="contact" className="relative z-10 py-20 px-4 md:px-12 bg-black bg-opacity-80">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Let’s Talk</h2>
         <form
           name="contact"
@@ -85,14 +105,14 @@ export default function LandingPage() {
           ></textarea>
           <button
             type="submit"
-            className="px-8 py-4 bg-black text-white font-semibold rounded-full shadow-lg hover:bg-teal-700 transition"
+            className="px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-teal-700 transition"
           >
             Send Message
           </button>
         </form>
       </section>
 
-      <footer className="py-8 text-center text-sm text-gray-500">
+      <footer className="relative z-10 py-8 text-center text-sm text-gray-400">
         © {new Date().getFullYear()} Sebby Media. All rights reserved.
       </footer>
     </div>
