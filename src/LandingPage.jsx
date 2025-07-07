@@ -1,9 +1,9 @@
-
 import { motion } from "framer-motion";
 
 export default function LandingPage() {
   return (
-    <div className="font-sans leading-relaxed text-gray-900">
+    <div className="font-sans leading-relaxed text-gray-900 scroll-smooth">
+      {/* Hero */}
       <header className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black to-teal-700 text-white px-4">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -11,25 +11,19 @@ export default function LandingPage() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-6xl font-extrabold mb-4 text-center"
         >
-          Sebby Media
+          Want a site like this? 🚀
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-xl md:text-2xl mb-8 max-w-2xl text-center"
-        >
-          We amplify your brand’s voice with data-driven strategy and striking creative so you can focus on growth.
-        </motion.p>
         <motion.a
           href="#contact"
           whileHover={{ scale: 1.05 }}
+          transition={{ delay: 0.2 }}
           className="px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg hover:shadow-xl transition"
         >
-          Get a Free Audit
+          Contact Us
         </motion.a>
       </header>
 
+      {/* Services */}
       <section id="services" className="py-20 px-4 md:px-12 bg-gray-50">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What We Do</h2>
         <div className="grid gap-8 md:grid-cols-3">
@@ -48,6 +42,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* About */}
       <section id="about" className="py-20 px-4 md:px-12">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Who We Are</h2>
@@ -58,6 +53,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Contact */}
       <section id="contact" className="py-20 px-4 md:px-12 bg-gray-50">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Let’s Talk</h2>
         <form
