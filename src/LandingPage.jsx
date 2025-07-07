@@ -8,7 +8,19 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="font-sans leading-relaxed text-white relative overflow-hidden">
+    <div className="font-sans leading-relaxed text-white relative overflow-hidden">{/* Navigation */}
+<nav className="fixed top-0 left-0 right-0 z-20 flex justify-between items-center px-6 py-4 bg-black/50 backdrop-blur-md text-white shadow-md">
+  <div className="text-lg font-bold">Your logo here</div>
+  <div className="relative group">
+    <button className="text-sm md:text-base font-medium px-4 py-2 rounded hover:bg-white hover:text-black transition">
+      Menu
+    </button>
+    <div className="absolute right-0 mt-2 w-40 bg-white text-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
+      <a href="#" className="block px-4 py-2 hover:bg-gray-100">Sample Page 1</a>
+      <a href="#" className="block px-4 py-2 hover:bg-gray-100">Sample Page 2</a>
+    </div>
+  </div>
+</nav>
       {/* Moving abstract space background */}
       <div className="absolute inset-0 z-0">
         <video
