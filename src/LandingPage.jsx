@@ -10,6 +10,10 @@ export default function LandingPage() {
 
   return (
     <div className="font-sans leading-relaxed text-white relative overflow-hidden">{/* Navigation */}
+<div className="font-sans leading-relaxed text-gray-900">
+  <NebulaBackground />
+  {/* rest of your content */}
+</div>
 <nav className="fixed top-0 left-0 right-0 z-20 flex justify-between items-center px-6 py-4 bg-black/50 backdrop-blur-md text-white shadow-md">
   <div className="text-lg font-bold">Your logo here</div>
   <div className="relative group">
